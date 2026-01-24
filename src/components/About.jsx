@@ -4,59 +4,71 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-[#0a003a] text-white py-16 px-4 flex justify-center"
+      className="relative bg-[#0a003a] text-white py-20 px-4 flex justify-center"
     >
-      <div className="w-full max-w-5xl bg-[#151130] bg-opacity-80 shadow-xl p-8 md:p-12 rounded-xl border border-[#23234c] flex flex-col md:flex-row items-center gap-10">
-        
+      {/* subtle background glow */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 via-transparent to-blue-500/10 pointer-events-none" />
+
+      <div className="relative w-full max-w-6xl backdrop-blur-xl bg-[#151130]/80 border border-white/10 rounded-2xl shadow-2xl p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
+
         {/* IMAGE */}
-        <div className="w-40 h-48 md:w-52 md:h-64 rounded-lg overflow-hidden bg-gray-900 flex-shrink-0 shadow-lg">
-          <img
-            src="/mypic.png"
-            alt="Profile"
-            className="w-full h-full object-cover"
-          />
+        <div className="relative group">
+          <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-purple-500 to-blue-500 blur opacity-30 group-hover:opacity-60 transition" />
+          <div className="relative w-44 h-56 md:w-56 md:h-72 rounded-xl overflow-hidden border border-white/10 shadow-xl">
+            <img
+              src="/mypic.png"
+              alt="Santosh Kumar Maurya"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+            />
+          </div>
         </div>
 
-        {/* TEXT SECTION */}
-        <div className="flex-1">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-purple-400 leading-snug">
+        {/* TEXT */}
+        <div className="flex-1 space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight">
             Why hire me for your{" "}
-            <span className="text-blue-400">next project?</span>
+            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              next project?
+            </span>
           </h2>
 
-          <p className="text-sm md:text-base font-mono leading-relaxed text-gray-200 mb-6">
-            I am a full-stack web developer with hands-on experience in React,
-            Node.js, Express, and Java (Spring Boot). I build scalable APIs,
-            production-ready UI, and maintainable backend systems. I solve
-            problems fast, debug efficiently, and deliver clean, reliable
-            code—no unnecessary complexity.
+          <p className="text-sm md:text-base font-mono leading-relaxed text-gray-300">
+            I am a <span className="text-white">full-stack developer</span> with
+            hands-on experience in <span className="text-purple-400">React</span>,{" "}
+            <span className="text-blue-400">Node.js</span>,{" "}
+            <span className="text-purple-400">Express</span>, and{" "}
+            <span className="text-blue-400">Java (Spring Boot)</span>.  
+            I build scalable APIs, production-ready UIs, and maintainable backend
+            systems with a strong focus on performance and clean architecture.
           </p>
 
-          {/* STATS + BUTTONS */}
-          <div className="flex flex-wrap items-center gap-6 md:gap-10">
+          {/* STATS */}
+          <div className="flex flex-wrap gap-10 pt-2">
             <div>
-              <span className="block text-xl font-bold text-purple-400">
-                1+ years
-              </span>
-              <span className="block text-sm font-mono text-gray-400">
+              <div className="text-2xl font-bold text-purple-400">1+ Years</div>
+              <div className="text-xs uppercase tracking-widest text-gray-400">
                 Experience
-              </span>
+              </div>
             </div>
 
             <div>
-              <span className="block text-xl font-bold text-blue-400">
-                5+
-              </span>
-              <span className="block text-sm font-mono text-gray-400">
+              <div className="text-2xl font-bold text-blue-400">5+</div>
+              <div className="text-xs uppercase tracking-widest text-gray-400">
                 Projects
-              </span>
+              </div>
             </div>
+          </div>
 
+          {/* CTA BUTTONS */}
+          <div className="flex flex-wrap gap-4 pt-4">
             <a
               href="/Santosh Java resume.pdf"
               download
-              className="px-4 py-2 font-mono rounded bg-gray-800 hover:bg-purple-500 text-white transition text-sm"
-            ><i className="fa-solid fa-download text-gray-300 mr-2"></i>
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
+                         bg-gradient-to-r from-purple-600 to-blue-600
+                         hover:opacity-90 transition text-sm font-mono shadow-lg"
+            >
+              <i className="fa-solid fa-download" />
               Download CV
             </a>
 
@@ -64,8 +76,11 @@ export default function About() {
               href="https://github.com/Mickelcom"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 font-mono rounded bg-gray-800 hover:bg-blue-500 text-white transition text-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
+                         border border-white/15 hover:bg-white/10
+                         transition text-sm font-mono"
             >
+              <i className="fa-brands fa-github" />
               GitHub
             </a>
           </div>
