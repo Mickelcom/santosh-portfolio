@@ -62,7 +62,7 @@ export default function About() {
           {/* CTA BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-4">
             <a
-              href="/Santosh Java resume.pdf"
+              href="/santosh resume java.pdf"
               download
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
                          bg-gradient-to-r from-purple-600 to-blue-600
