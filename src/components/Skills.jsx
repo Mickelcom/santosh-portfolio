@@ -2,105 +2,113 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const frontendSkills = [
-  { name: "HTML5", value: 95, color: "bg-purple-500" },
-  { name: "React", value: 90, color: "bg-blue-500" },
-  { name: "CSS", value: 95, color: "bg-purple-600" },
-  { name: "Javascript", value: 85, color: "bg-yellow-500" },
-  { name: "TailWind CSS", value: 80, color: "bg-cyan-400" },
-  { name: "Bootstrap", value: 70, color: "bg-pink-500" },
+  { name: "HTML5", value: 95, color: "from-purple-500 to-purple-400" },
+  { name: "CSS3", value: 95, color: "from-purple-600 to-purple-500" },
+  { name: "JavaScript", value: 85, color: "from-yellow-500 to-yellow-400" },
+  { name: "React", value: 90, color: "from-blue-500 to-blue-400" },
+  { name: "Tailwind CSS", value: 80, color: "from-cyan-500 to-cyan-400" },
+  { name: "Bootstrap", value: 70, color: "from-pink-500 to-pink-400" },
 ];
 
 const backendSkills = [
-  { name: "Node.js", value: 85, color: "bg-green-500" },
-  { name: "Express.js", value: 80, color: "bg-green-600" },
-  { name: "MySQL", value: 75, color: "bg-blue-400" },
-  { name: "Java", value: 70, color: "bg-red-500" },
-  { name: "Spring Boot", value: 65, color: "bg-lime-500" },
-  { name: "Hibernate", value: 75, color: "bg-blue-600" },
+  { name: "Node.js", value: 60, color: "from-green-500 to-green-400" },
+  { name: "Express.js", value: 50, color: "from-green-600 to-green-500" },
+  { name: "Java", value: 90, color: "from-red-500 to-red-400" },
+  { name: "Spring Boot", value: 80, color: "from-lime-500 to-lime-400" },
+  { name: "Spring Security", value: 75, color: "from-emerald-500 to-emerald-400" },
+  { name: "Hibernate", value: 85, color: "from-blue-600 to-blue-500" },
+  { name: "MySQL", value: 80, color: "from-blue-500 to-blue-400" },
+  { name: "PostgreSQL", value: 60, color: "from-indigo-500 to-indigo-400" },
+];
+
+const tools = [
+  { icon: "fa-code", name: "VS Code" },
+  { icon: "fa-brands fa-git-alt", name: "Git" },
+  { icon: "fa-brands fa-github", name: "GitHub" },
+  { icon: "fa-brands fa-figma", name: "Figma" },
 ];
 
 export default function Skills() {
   const [active, setActive] = useState("frontend");
-
   const skills = active === "frontend" ? frontendSkills : backendSkills;
 
   return (
     <section
       id="skills"
-      className="py-16 bg-[#0a003a] text-white flex flex-col items-center px-4"
+      className="relative bg-[#0a003a] text-white py-24 px-4"
     >
-      <div className="max-w-3xl w-full mx-auto">
-        <h2 className="text-4xl font-bold text-purple-400 mb-10 text-center font-mono">
-          Tools and Skills
+      {/* background glow */}
+      <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 via-transparent to-blue-500/10 pointer-events-none" />
+
+      <div className="relative max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-14">
+          <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            Tools & Skills
+          </span>
         </h2>
 
-        {/* FILTER BUTTONS */}
-        <div className="mb-8 flex flex-wrap gap-3 justify-center">
-          <button
-            onClick={() => setActive("frontend")}
-            className={`px-4 py-2 rounded-full text-sm font-mono transition ${
-              active === "frontend"
-                ? "bg-purple-900 text-white"
-                : "bg-gray-800 text-gray-400"
-            }`}
-          >
-            Front-end
-          </button>
-
-          <button
-            onClick={() => setActive("backend")}
-            className={`px-4 py-2 rounded-full text-sm font-mono transition ${
-              active === "backend"
-                ? "bg-purple-900 text-white"
-                : "bg-gray-800 text-gray-400"
-            }`}
-          >
-            Back-end
-          </button>
+        {/* SEGMENTED TOGGLE */}
+        <div className="flex justify-center mb-12">
+          <div className="flex bg-[#151130]/80 backdrop-blur-md border border-white/10 rounded-full p-1">
+            {["frontend", "backend"].map((type) => (
+              <button
+                key={type}
+                onClick={() => setActive(type)}
+                className={`px-6 py-2 text-sm font-mono rounded-full transition
+                  ${
+                    active === type
+                      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow"
+                      : "text-gray-400 hover:text-white"
+                  }`}
+              >
+                {type === "frontend" ? "Front-end" : "Back-end"}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* TOOLS */}
-        <div className="mb-10 flex flex-wrap gap-8 justify-center text-center">
-          <div className="flex flex-col items-center">
-            <i className="fa-solid fa-code text-gray-300 text-xl"></i>
-            <span className="font-mono text-xs text-gray-400 mt-1">VS Code</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <i className="fa-brands fa-git-alt text-gray-300 text-xl"></i>
-            <span className="font-mono text-xs text-gray-400 mt-1">Git</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <i className="fa-brands fa-github text-gray-300 text-xl"></i>
-            <span className="font-mono text-xs text-gray-400 mt-1">GitHub</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <i className="fa-brands fa-figma text-gray-300 text-xl"></i>
-            <span className="font-mono text-xs text-gray-400 mt-1">Figma</span>
-          </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-14">
+          {tools.map((tool) => (
+            <div
+              key={tool.name}
+              className="bg-[#151130]/70 backdrop-blur-md border border-white/10 rounded-xl
+                         py-4 flex flex-col items-center justify-center
+                         hover:scale-105 transition"
+            >
+              <i className={`fa-solid ${tool.icon} text-xl text-gray-300`} />
+              <span className="mt-2 text-xs font-mono text-gray-400">
+                {tool.name}
+              </span>
+            </div>
+          ))}
         </div>
 
-        {/* SKILL BARS WITH SLIDE ANIMATION */}
+        {/* SKILLS */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="space-y-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+            className="space-y-6"
           >
             {skills.map((skill) => (
               <div key={skill.name}>
-                <div className="flex justify-between items-center mb-1">
-                  <span className="text-sm font-bold">{skill.name}</span>
-                  <span className="text-xs text-gray-400">{skill.value}%</span>
+                <div className="flex justify-between mb-1">
+                  <span className="text-sm font-semibold">{skill.name}</span>
+                  <span className="text-xs text-gray-400">
+                    {skill.value}%
+                  </span>
                 </div>
-                <div className="w-full bg-[#1a1255] rounded-full h-3 overflow-hidden">
+
+                <div className="w-full h-3 rounded-full bg-[#1a1255] overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.value}%` }}
-                    transition={{ duration: 0.6 }}
-                    className={`${skill.color} h-3 rounded-full`}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className={`h-3 rounded-full bg-gradient-to-r ${skill.color} shadow`}
                   />
                 </div>
               </div>
