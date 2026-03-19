@@ -5,7 +5,8 @@ const frontendSkills = [
   { name: "HTML5", value: 95, color: "from-purple-500 to-purple-400" },
   { name: "CSS3", value: 95, color: "from-purple-600 to-purple-500" },
   { name: "JavaScript", value: 85, color: "from-yellow-500 to-yellow-400" },
-  { name: "React", value: 90, color: "from-blue-500 to-blue-400" },
+  { name: "React", value: 80, color: "from-blue-500 to-blue-400" },
+  { name: "Nextjs", value: 90, color: "from-cyan-500 to-blue-400" },
   { name: "Tailwind CSS", value: 80, color: "from-cyan-500 to-cyan-400" },
   { name: "Bootstrap", value: 70, color: "from-pink-500 to-pink-400" },
 ];

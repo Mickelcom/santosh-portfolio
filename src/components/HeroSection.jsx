@@ -10,9 +10,9 @@ export default function HeroSection() {
 
   const projects = [
     {
-      title: "Book Management System",
+      title: "Billing Management System",
       tech: "Java, Spring Boot, MySQL, Spring security",
-      desc: "CRUD-based backend system with REST APIs and database integration."
+      desc: "Developed a billing and invoice management backend with RESTful APIs, secure authentication, and MySQL-based data handling."
     },
     {
       title: "Chat Application",

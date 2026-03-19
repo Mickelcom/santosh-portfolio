@@ -22,6 +22,12 @@ const education = [
     period: "2019 – 2020",
     summary: "Completed senior secondary education with 73% score.",
   },
+  {
+    degree: "High School (10th)",
+    school: "CBSE Board",
+    period: "2018 – 2019",
+    summary: "Completed High School education with 54% score.",
+  },
 ];
 
 export default function Education() {

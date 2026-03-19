@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: "Full Stack Java Developer",
-    company: "The Skybrisk",
+    title: "Java Developer",
+    company: "Athenura",
     period: "Jan 2026 – Present",
-    link: "https://www.theskybrisk.com/",
+    link: "https://www.athenura.in/",
     summary:
       "Contributed to Java backend development using Spring Boot, Spring Security, REST APIs, and MySQL. Implemented secure APIs, optimized performance, and resolved production issues while collaborating with cross-functional teams for scalable feature delivery.",
   },
@@ -102,7 +102,7 @@ export default function Experience() {
                     }
                     className="mt-4 text-sm font-mono text-blue-400 hover:text-blue-300 transition"
                   >
-                    {isOpen ? "Show less ↑" : "Read more ↓"}
+                    {isOpen ? "Show less" : "Read more"}
                   </button>
                 </div>
               </motion.div>

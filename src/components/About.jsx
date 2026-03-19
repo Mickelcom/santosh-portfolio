@@ -45,14 +45,14 @@ export default function About() {
           {/* STATS */}
           <div className="flex flex-wrap gap-10 pt-2">
             <div>
-              <div className="text-2xl font-bold text-purple-400">1+ Years</div>
+              <div className="text-2xl font-bold text-purple-400">1.5+ Years</div>
               <div className="text-xs uppercase tracking-widest text-gray-400">
                 Experience
               </div>
             </div>
 
             <div>
-              <div className="text-2xl font-bold text-blue-400">5+</div>
+              <div className="text-2xl font-bold text-blue-400">7+</div>
               <div className="text-xs uppercase tracking-widest text-gray-400">
                 Projects
               </div>
@@ -62,7 +62,7 @@ export default function About() {
           {/* CTA BUTTONS */}
           <div className="flex flex-wrap gap-4 pt-4">
             <a
-              href="/santosh resume java.pdf"
+              href="/Java Resume Santosh.pdf"
               download
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg
                          bg-gradient-to-r from-purple-600 to-blue-600
